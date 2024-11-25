@@ -1,8 +1,10 @@
 package co.kr.metacoding.backendtest.user;
 
+import co.kr.metacoding.backendtest._core.error.ex.Exception400;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
 @RestController
 @RequiredArgsConstructor
@@ -11,8 +13,9 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping("/users/{id}")
-    public UserResponse.UserInfoDTO getUser(@PathVariable int id) {
+    public UserResponse.UserInfoDTO getUser(@PathVariable Integer id) {
         return userService.findUserById(id);
+
     }
 
     @PostMapping("/users")

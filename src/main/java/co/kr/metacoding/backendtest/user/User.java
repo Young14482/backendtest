@@ -18,6 +18,8 @@ public class User {
     private String name;
 
     public void update(String name) {
-        this.name = name;
+        if(name != null) {
+            this.name = name;
+        }
     }
 }
