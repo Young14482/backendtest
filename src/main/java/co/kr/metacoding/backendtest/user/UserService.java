@@ -1,7 +1,6 @@
 package co.kr.metacoding.backendtest.user;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,7 +17,14 @@ public class UserService {
 
     @Transactional
     public UserResponse.UserInsertDTO insertUser(User user) {
-        User inserted = userRepository.insert(user);
+        User inserted = userRepository.save(user);
         return new UserResponse.UserInsertDTO(inserted);
+    }
+
+    @Transactional
+    public UserResponse.UserUpdatedDTO updateUser(int id, UserRequest.UserUpdateDTO userUpdateDTO) {
+        User target = userRepository.findById(id);
+        target.update(userUpdateDTO.getName());
+        return new UserResponse.UserUpdatedDTO(target);
     }
 }

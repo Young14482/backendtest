@@ -1,10 +1,7 @@
 package co.kr.metacoding.backendtest.user;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -24,5 +21,9 @@ public class UserController {
         return insertUser;
     }
 
-
+    @PutMapping("/users/{id}")
+    public UserResponse.UserUpdatedDTO updateUser(@PathVariable int id , @RequestBody UserRequest.UserUpdateDTO userUpdateDTO) {
+        UserResponse.UserUpdatedDTO userUpdatedDTO = userService.updateUser(id, userUpdateDTO);
+        return userUpdatedDTO;
+    }
 }

@@ -24,4 +24,14 @@ public class UserResponse {
         }
     }
 
+    @Data
+    public static class UserUpdatedDTO {
+       private int id;
+       private String name;
+
+       public UserUpdatedDTO(User user) {
+           this.id = user.getId();
+           this.name = user.getName();
+       }
+    }
 }
