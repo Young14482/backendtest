@@ -1,5 +1,6 @@
 package co.kr.metacoding.backendtest.user;
 
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
