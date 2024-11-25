@@ -18,9 +18,10 @@ public class UserController {
     }
 
     @PostMapping("/users")
-    public void insertUser() {
-        userService.insertUser();
-        //TODO 결과값으로 생성된 id출력되야함
+    public UserResponse.UserInsertDTO insertUser() {
+        User user = new User();
+        UserResponse.UserInsertDTO insertUser = userService.insertUser(user);
+        return insertUser;
     }
 
 
