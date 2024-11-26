@@ -1,14 +1,11 @@
 package co.kr.metacoding.backendtest._core.aop;
 
 import jakarta.servlet.http.HttpServletRequest;
-import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
-
-import java.net.http.HttpRequest;
 
 @Component
 @Aspect

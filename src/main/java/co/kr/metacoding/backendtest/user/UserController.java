@@ -1,10 +1,7 @@
 package co.kr.metacoding.backendtest.user;
 
-import co.kr.metacoding.backendtest._core.error.ex.Exception400;
-import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
 @RestController
 @RequiredArgsConstructor
